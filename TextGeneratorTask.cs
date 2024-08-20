@@ -27,7 +27,7 @@ static class TextGeneratorTask // задумка такая есть цикл, �
         var result = new List<string>(wordsInPhrase); 
         for (int i = 0; i < wordsCount; i++) 
         {
-            if(result.Count >= 2 && wordsCount != 1) result = findTrigramm(result, nextWords, wordsInPhrase.Count() + wordsCount);
+            if(result.Count >= 2) result = findTrigramm(result, nextWords, wordsInPhrase.Count() + wordsCount);
             result = findBigramm(result, nextWords, wordsInPhrase.Count() + wordsCount);
             if(result.Count == wordsInPhrase.Count() + wordsCount) break;
         }
